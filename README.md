@@ -5,6 +5,7 @@ This project is a proof of concept (POC) for exploring new features introduced i
 
 ## Documentation
 - [JDK 23 Project Page](https://openjdk.org/projects/jdk/23/)
+- https://softwaremill.com/stream-gatherers-in-practice-part-2/
 
 ## Features Covered in this POC
 - JEP 455: Primitive Types in Patterns, instanceof, and switch (Preview)
@@ -19,3 +20,8 @@ This project is a proof of concept (POC) for exploring new features introduced i
 - JEP 480: Structured Concurrency (Third Preview)
 - JEP 481: Scoped Values (Third Preview)
 - JEP 482: Flexible Constructor Bodies (Second Preview)
+
+
+## Setup Java version 23
+$env:JAVA_HOME="C:\Users\Nolr4m\.jdks\openjdk-23.0.2"
+$env:Path="$env:JAVA_HOME\bin;$env:Path"
