@@ -10,6 +10,7 @@ import java.util.concurrent.StructuredTaskScope;
 import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /// ### Advantages of JEP 480: Structured Concurrency
 /// - Structured concurrency automatically handles the lifecycle of tasks, ensuring they are properly completed, canceled, or cleaned up when a scope exits.
 /// - Provides built-in mechanisms to propagate and handle errors across all concurrent tasks within a scope, reducing the chances of unhandled errors or inconsistent states.
@@ -20,17 +21,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 ///     The JSON object for a scope also has a reference to its parent so that the structure of the program can be reconstituted from the dump.
 public class Jep480FeaturesTest {
 
-
     @Test
-    void unstructured_concurrency() throws ExecutionException, InterruptedException {
+    void unstructured_concurrency() throws InterruptedException {
         long start = System.currentTimeMillis();
 
         try (ExecutorService esvc = Executors.newFixedThreadPool(2)) {
             Future<String> user = esvc.submit(() -> findUser());
             Future<Integer> order = esvc.submit(() -> fetchOrder());
-
-            String theUser = user.get();
-            int theOrder = order.get();
 
             System.out.println(user.get() + " has placed an order for " + order.get());
         } catch (ExecutionException e) {
@@ -60,7 +57,7 @@ public class Jep480FeaturesTest {
     }
 
     String findUser() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         return "John";
     }
 

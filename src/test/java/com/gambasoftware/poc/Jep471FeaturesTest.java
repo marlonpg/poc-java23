@@ -1,7 +1,7 @@
 package com.gambasoftware.poc;
 
-/// https://openjdk.org/jeps/471
-/// Deprecating methods from Unsafe class
+/// ### JEP 471: Deprecate the Memory-Access Methods in sun.misc.Unsafe for Removal
+/// - Deprecate the memory-access methods in sun.misc.Unsafe for removal in a future release
 public class Jep471FeaturesTest {
 
 }

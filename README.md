@@ -6,6 +6,10 @@ This project is a proof of concept (POC) for exploring new features introduced i
 ## Documentation
 - [JDK 23 Project Page](https://openjdk.org/projects/jdk/23/)
 - https://softwaremill.com/stream-gatherers-in-practice-part-2/
+- https://www.infoq.com/news/2024/05/simplifying-java-module-import/
+- https://www.infoq.com/news/2024/05/java-zgc-update/
+- https://docs.oracle.com/en/java/javase/23/vm/class-file-api.html
+- https://medium.com/@benweidig/looking-at-java-22-class-file-api-a4cb241ff785
 
 ## Features Covered in this POC
 - JEP 455: Primitive Types in Patterns, instanceof, and switch (Preview)

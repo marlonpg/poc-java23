@@ -8,7 +8,8 @@ import java.util.stream.Gatherers;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/// ### Advantages of JEP 473: Stream Gatherers (Second Preview)
+/// - enhance the Stream API by enabling custom intermediate operations for greater flexibility and expressiveness.
 public class Jep473FeaturesTest {
 
     @Test
@@ -51,6 +52,25 @@ public class Jep473FeaturesTest {
 
     @Test
     void mapConcurrent() {
+        var numbers = Stream.of(1, 2, 3, 4, 5).parallel();
+
+        var counter = new AtomicInteger(0);
+
+        System.out.println("Map concurrent example:");
+        var gathered = numbers.gather(Gatherers.mapConcurrent(4, number -> {
+                    counter.incrementAndGet();
+                    return number * 2;
+                }))
+                .peek(integer -> System.out.println(Thread.currentThread().getName()))
+                .toList();
+
+
+        assertEquals(List.of(2, 4, 6, 8, 10), gathered);
+        assertEquals(5, counter.get());
+    }
+
+    @Test
+    void mapConcurrent2() {
         var numbers = Stream.of(1, 2, 3, 4, 5).parallel();
 
         var counter = new AtomicInteger(0);

@@ -1,19 +1,30 @@
 package com.gambasoftware.poc;
 
-import module java.base;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import module java.base;
+//import java.util.Map;
+//import java.util.function.Function;
+//import java.util.stream.Collectors;
+//import java.util.stream.Stream;
+
 /// Module Import Declarations (Preview)
-///https://www.infoq.com/news/2024/05/simplifying-java-module-import/
+/// - Enhance the Java programming language with the ability to succinctly import all of the packages exported by a module.
+/// This simplifies the reuse of modular libraries, but does not require the importing code to be in a module itself.
 public class Jep476FeaturesTest {
 
     @BeforeAll
-    static void beforeAll() {}
+    static void beforeAll() {
+    }
 
     @Test
     void test() {
-        List<String> list = List.of("a", "b", "c");
-        System.out.println(list);
+        String[] fruits = new String[]{"apple", "berry", "citrus"};
+        Map<String, String> m =
+                Stream.of(fruits)
+                        .collect(Collectors.toMap(s -> s.toUpperCase().substring(0, 1),
+                                Function.identity()));
     }
 }
