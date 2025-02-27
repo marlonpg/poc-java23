@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/// ### Advantages of JEP 455:
+/// ### Advantages of JEP 455: Primitive Types in Patterns, instanceof, and switch (Preview)
 /// - Better readability and conciseness by removing boilerplate casting code.
 /// - More expressive handling of data types, especially primitives, in pattern matching.
 /// - Enhanced flexibility by allowing additional runtime constraints (with `when`).
@@ -39,20 +39,5 @@ public class Jep455FeaturesTest {
         };
 
         assertEquals("Value is a positive double: 10.5", result);
-    }
-
-
-    @Test
-    void primitive_in_patterns() {
-        Object value = 100.5;
-        String result = switch (value) {
-            case int i when i > 0 -> "Positive integer: " + i;
-            case double d when d > 0 -> "Positive double: " + d;
-            case int i -> "Non-positive integer: " + i;
-            case double d -> "Non-positive double: " + d;
-            default -> "Unknown type: " + value;
-        };
-
-        assertEquals("Positive double: 100.5", result);
     }
 }
