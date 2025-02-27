@@ -32,11 +32,9 @@ public class Jep466FeaturesTest {
 
         for (ClassElement classElement : classModel) {
             switch (classElement) {
-                case MethodModel mm -> System.out.printf("Method %s%n",
-                        mm.methodName().stringValue());
-                case FieldModel fm -> System.out.printf("Field %s%n",
-                        fm.fieldName().stringValue());
-                default -> { /* NO-OP */ }
+                case MethodModel methodModel -> System.out.printf("Method %s%n", methodModel.methodName().stringValue());
+                case FieldModel fieldModel -> System.out.printf("Field %s%n", fieldModel.fieldName().stringValue());
+                default -> {}
             }
         }
     }

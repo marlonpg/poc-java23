@@ -1,17 +1,13 @@
 package com.gambasoftware.poc;
 
-/// # Markdown Example
-///
-/// This class demonstrates the **Markdown Documentation Comments** introduced in Java 21.
+
+/// JEP 467: Markdown Documentation Comments
 ///
 /// ## Features Demonstrated
 /// - Markdown headings (`#`, `##`, `###`).
 /// - Lists (both ordered and unordered).
 /// - Inline code (`like_this`) and code blocks.
 /// - Links and emphasis.
-///
-/// See [JEP 467](https://openjdk.org/jeps/467) for more details.
-///
 /// ### Output Using `javadoc` Tool:
 /// If you run the `javadoc` tool with `--enable-preview`, and view the generated HTML documentation in a browser, the Markdown will render beautifully.
 /// #### Example Command:
